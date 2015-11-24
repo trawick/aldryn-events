@@ -5,10 +5,11 @@ from aldryn_events import __version__
 
 py26 = sys.version_info < (2, 7, 0) and sys.version_info >= (2, 6, 0)
 py27 = sys.version_info < (2, 8, 0) and sys.version_info >= (2, 7, 0)
+py3k = sys.version_info >= (3, 3, 0)  # for u'unicode' syntax
 
-if not py26 and not py27:
+if not py26 and not py27 and not py3k:
     raise ValueError(
-        "Aldryn Events currently support only python 2.6 to 2.7, "
+        "Aldryn Events currently supports Python 2.6, 2.7, 3.3, and higher, "
         "not {0}".format(sys.version_info)
     )
 
@@ -38,7 +39,7 @@ if py26:
         'South>=1.0.2,<1.1',
     ]
 
-if py27:
+if py27 or py3k:
     REQUIREMENTS += [
         'Django>=1.6,<1.9',
     ]

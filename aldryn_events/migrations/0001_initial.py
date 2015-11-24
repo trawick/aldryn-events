@@ -36,7 +36,7 @@ class Migration(migrations.Migration):
                 ('register_link', models.URLField(default=b'', help_text=b'link to an external registration system', verbose_name='registration link', blank=True)),
                 ('enable_registration', models.BooleanField(default=False, verbose_name='enable event registration')),
                 ('registration_deadline_at', models.DateTimeField(default=None, null=True, verbose_name='allow registartion until', blank=True)),
-                ('description', cms.models.fields.PlaceholderField(slotname=b'aldryn_events_event_description', editable=False, to='cms.Placeholder', null=True, verbose_name='description')),
+                ('description', cms.models.fields.PlaceholderField(slotname='aldryn_events_event_description', editable=False, to='cms.Placeholder', null=True, verbose_name='description')),
             ],
             options={
                 'ordering': ('start_date', 'start_time', 'end_date', 'end_time'),
